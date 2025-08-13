@@ -96,9 +96,16 @@ $yamada->attend('PHP');
 
 // Q5 定義済みクラス
 // 問題1
-
+$now = new DateTime();
+echo $now->format('Y-m-d');
 
 // 問題2
+$date1 = new DateTime('today');
+$date2 = new DateTime('1992-04-25');
 
+$interval = $date2->diff($date1);
+$days = $interval->days;
+
+echo "あの日から{$days}日経過しました。";
 
 ?>
