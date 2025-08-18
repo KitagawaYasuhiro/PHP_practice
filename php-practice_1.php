@@ -19,9 +19,9 @@ echo '現在時刻は、' . date('Y年m月d日 H時i分s秒') . 'です。';
 $device = 'windows';
 
 if ($device == 'windows' || $device == 'mac') {
-  echo '使用OSは、' . $device . 'です。';
+    echo '使用OSは、' . $device . 'です。';
 } else {
-  echo 'どちらでもありません。';
+    echo 'どちらでもありません。';
 }
 
 // Q5 条件分岐-2 三項演算子
@@ -37,26 +37,26 @@ echo $prefecture[3] . 'と' . $prefecture[4] . 'は関東地方の都道府県�
 
 // Q7 連想配列-1
 $capital = [
-  '東京都' => '新宿区',
-  '神奈川県' => '横浜市',
-  '千葉県' => '千葉市',
-  '埼玉県' => 'さいたま市',
-  '栃木県' => '宇都宮市',
-  '群馬県' => '前橋市',
-  '茨城県' => '水戸市',
+    '東京都' => '新宿区',
+    '神奈川県' => '横浜市',
+    '千葉県' => '千葉市',
+    '埼玉県' => 'さいたま市',
+    '栃木県' => '宇都宮市',
+    '群馬県' => '前橋市',
+    '茨城県' => '水戸市',
 ];
 
 foreach ($capital as $city) {
-  echo $city . "\n";
+    echo $city . "\n";
 }
 
 // Q8 連想配列-2
 $prefecture = '埼玉県';
 
 if (array_key_exists($prefecture, $capital)) {
-  echo $prefecture . 'の県庁所在地は、' . $capital[$prefecture] . 'です。';
+    echo $prefecture . 'の県庁所在地は、' . $capital[$prefecture] . 'です。';
 } else {
-  echo '該当する都道府県は見つかりません。';
+    echo '該当する都道府県は見つかりません。';
 }
 
 // Q9 連想配列-3
@@ -66,17 +66,17 @@ $capital['大阪府'] = '大阪市';
 $kanto = ['東京都', '神奈川県', '千葉県', '埼玉県', '栃木県', '群馬県', '茨城県'];
 
 foreach ($capital as $prefecture => $city) {
-  if (in_array($prefecture,$kanto)) {
-    echo $prefecture . "の県庁所在地は、" . $city . "です。\n";
-  } else {
-    echo $prefecture . "は関東地方ではありません。\n";
-  }
+    if (in_array($prefecture,$kanto)) {
+        echo $prefecture . "の県庁所在地は、" . $city . "です。\n";
+    } else {
+        echo $prefecture . "は関東地方ではありません。\n";
+    }
 }
 
 // Q10 関数-1
 function hello($name)
 {
-  echo $name . "さん、こんにちは。\n";
+    echo $name . "さん、こんにちは。\n";
 }
 
 hello('田中');
@@ -87,7 +87,7 @@ $price = 3000;
 
 function calcTaxInPrice($price)
 {
-  return $price * 1.1;
+    return $price * 1.1;
 }
 
 $taxPrice = calcTaxInPrice($price);
@@ -97,36 +97,37 @@ echo "{$price}円の商品の税込み価格は{$taxPrice}円です。\n";
 // Q12 関数とif文
 function distinguishNum($num)
 {
-  if ($num % 2 !== 0) {
-    echo "{$num}は奇数です。\n";
-  } else {
-    echo "{$num}は偶数です。\n";
-  }
+    if ($num % 2 !== 0) {
+        echo "{$num}は奇数です。\n";
+    } else {
+        echo "{$num}は偶数です。\n";
+    }
 }
 
 distinguishNum(11);
 distinguishNum(24);
 
 // Q13 関数とswitch文
+$grade = ['A', 'B', 'C', 'D'];
+
 function evaluateGrade($grade)
 {
-  switch ($grade) {
-    
-    case 'C':
-      return "合格ですが追加課題があります。";
-      break;
+    switch ($grade) {
+        case 'C':
+            return "合格ですが追加課題があります。";
+            break;
 
-    case 'D':
-      return "判定不明です。講師に問い合わせてください。";
-      break;
+        case 'D':
+            return "判定不明です。講師に問い合わせてください。";
+            break;
 
-    default:
-      return "合格です。";
-      break;
-  }
+        default:
+            return "合格です。";
+            break;
+    }
 }
 
-echo evaluateGrade('A') . "\n";
-echo evaluateGrade('D') . "\n";
+echo evaluateGrade($grade[0]) . "\n";
+echo evaluateGrade($grade[3]) . "\n";
 
 ?>
